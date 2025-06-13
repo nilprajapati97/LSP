@@ -18,8 +18,6 @@ void *thread_1(void *p)
         fflush(stdout);
         sleep(1);
         pthread_mutex_unlock(&m2);
-
-
     }
 }
 
@@ -32,8 +30,6 @@ void *thread_2(void *p)
         printf("%c\n",i);
         sleep(1);
         pthread_mutex_unlock(&m1);
-
-
     }
 }
 
@@ -43,8 +39,6 @@ int main()
     pthread_mutex_init(&m1,NULL);
     pthread_mutex_init(&m2,NULL);
     pthread_mutex_lock(&m2);
-
-
 
     // Create reader thread
     if (pthread_create(&t1, NULL, thread_1, NULL) != 0)
